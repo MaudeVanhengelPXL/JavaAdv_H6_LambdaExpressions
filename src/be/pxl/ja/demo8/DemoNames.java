@@ -14,6 +14,7 @@ public class DemoNames {
 		System.out.println("Filter 3");
 		Predicate<String> startsWithA = (n) -> n.startsWith("A");
 		princessNames.filterNames(startsWithA.and(length5));
+		//combinatie van de twee predicates, eerst gaat deze door eerste filter en daarna door de tweede
 	}
 
 }
