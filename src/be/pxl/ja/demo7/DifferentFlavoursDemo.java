@@ -10,9 +10,9 @@ public class DifferentFlavoursDemo {
 	public static void main(String[] args) {
 
 		Supplier<Integer> always5 = () -> 5;
-		IntUnaryOperator sqrt = (int x) -> x * x;
+		IntUnaryOperator pow = (int x) -> x * x;
 		IntUnaryOperator plus5 = x -> x + 5;
-		IntBinaryOperator sumSqrt = (x, y) -> sqrt.applyAsInt(x) + sqrt.applyAsInt(y);
+		IntBinaryOperator sumSqrt = (x, y) -> pow.applyAsInt(x) + pow.applyAsInt(y);
 		IntConsumer printInBox = x -> {
 			int length = String.valueOf(x).length();
 			System.out.println("*".repeat(length + 2));
@@ -21,7 +21,7 @@ public class DifferentFlavoursDemo {
 		};
 
 		System.out.println(always5.get());
-		System.out.println(sqrt.applyAsInt(5));
+		System.out.println(pow.applyAsInt(5));
 		System.out.println(plus5.applyAsInt(10));
 		System.out.println(sumSqrt.applyAsInt(7, 5));
 		printInBox.accept(1234567);
