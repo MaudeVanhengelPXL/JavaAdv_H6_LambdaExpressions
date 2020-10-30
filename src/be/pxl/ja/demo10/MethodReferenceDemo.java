@@ -32,6 +32,13 @@ public class MethodReferenceDemo {
 
 		System.out.println("Instance method (bounded)");
 		IntSupplier randomInt = random::nextInt;
+		//Hier staat:
+		/*IntSupplier randomInt = new IntSupplier() {
+			@Override
+			public int getAsInt() {
+				return random.nextInt();
+			}
+		}*/
 		IntUnaryOperator randomIntWithBound = random::nextInt;
 		System.out.println(randomInt.getAsInt());
 		System.out.println(randomIntWithBound.applyAsInt(12));
