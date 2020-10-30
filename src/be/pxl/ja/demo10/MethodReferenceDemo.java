@@ -27,8 +27,8 @@ public class MethodReferenceDemo {
 		Supplier<Random> randomCreator = Random::new;
 		Random random = randomCreator.get();
 
-		Function<Integer, ArrayList<Document>> movieListCreator = ArrayList::new;
-		ArrayList<Document> documentList = movieListCreator.apply(120);
+		Function<Integer, ArrayList<Document>> documentListCreator = ArrayList::new;
+		ArrayList<Document> documentList = documentListCreator.apply(120);
 
 		System.out.println("Instance method (bounded)");
 		IntSupplier randomInt = random::nextInt;
