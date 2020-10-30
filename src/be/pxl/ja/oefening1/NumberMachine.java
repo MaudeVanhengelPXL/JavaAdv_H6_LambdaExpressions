@@ -12,19 +12,18 @@ public class NumberMachine {
 		}
 	}
 
-	/*
-	TODO: uncomment this method after the NumberFilter interface is created.
+
 	public String processNumbers(NumberFilter filter) {
-		String result = "";
+		StringBuilder result = new StringBuilder();
 		for(int i=0;i<numbers.size();i++) {
 			if(filter.check(numbers.get(i))) {
-				if(!result.equals("")) {
-					result += "-";
+				if(!result.toString().equals("")) {
+					result.append("-");
 				}
-				result += numbers.get(i);
+				result.append(numbers.get(i));
 			}
 		}
-		return result;
+		return result.toString();
 	}
-	*/
+
 }

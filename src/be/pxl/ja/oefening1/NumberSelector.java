@@ -1,12 +1,18 @@
 package be.pxl.ja.oefening1;
 
 public class NumberSelector {
-
+	private NumberMachine numberMachine;
 	public NumberSelector(NumberMachine numberMachine) {
+		this.numberMachine = numberMachine;
 	}
 
 	public String showEvenNumbers() {
-		throw new UnsupportedOperationException("Implement this method");
+		numberMachine.processNumbers(new NumberFilter() {
+			@Override
+			public boolean check(int number) {
+				return number % 2;
+			}
+			)
 	}
 
 	public String printHexNumbers() {
