@@ -1,6 +1,7 @@
 package be.pxl.ja.oefening1;
 
 import java.util.ArrayList;
+import java.util.function.Function;
 
 public class NumberMachine {
 
@@ -22,6 +23,17 @@ public class NumberMachine {
 				}
 				result.append(numbers.get(i));
 			}
+		}
+		return result.toString();
+	}
+
+	public String convertNumbers(Function<Integer, String> function) {
+		StringBuilder result = new StringBuilder();
+		for (int i = 0; i < numbers.size(); i++) {
+			if (!result.toString().equals("")) {
+				result.append("-");
+			}
+			result.append(function.apply(numbers.get(i)));
 		}
 		return result.toString();
 	}

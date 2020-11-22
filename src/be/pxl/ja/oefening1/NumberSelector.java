@@ -7,21 +7,19 @@ public class NumberSelector {
 	}
 
 	public String showEvenNumbers() {
-		/*numberMachine.processNumbers(new NumberFilter() {
+		return numberMachine.processNumbers(new NumberFilter() {
 			@Override
 			public boolean check(int number) {
-				return number % 2;
+				return number % 2 == 0;
 			}
-			//TODO haakjes corrigeren
-		}*/
-		return null;
+		});
 	}
 
 	public String printHexNumbers() {
-		throw new UnsupportedOperationException("Implement this method");
+		return numberMachine.convertNumbers(number -> Integer.toHexString(number));
 	}
 
-	public String showNumbersAbove(int number) {
-		throw new UnsupportedOperationException("Implement this method");
+	public String showNumbersAbove(int givenNumber) {
+		return numberMachine.processNumbers(number -> number > givenNumber);
 	}
 }
