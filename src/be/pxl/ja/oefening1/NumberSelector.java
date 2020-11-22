@@ -7,12 +7,14 @@ public class NumberSelector {
 	}
 
 	public String showEvenNumbers() {
-		numberMachine.processNumbers(new NumberFilter() {
+		/*numberMachine.processNumbers(new NumberFilter() {
 			@Override
 			public boolean check(int number) {
 				return number % 2;
 			}
-			)
+			//TODO haakjes corrigeren
+		}*/
+		return null;
 	}
 
 	public String printHexNumbers() {
