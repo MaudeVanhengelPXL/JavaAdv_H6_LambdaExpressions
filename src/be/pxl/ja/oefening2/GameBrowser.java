@@ -1,6 +1,7 @@
 package be.pxl.ja.oefening2;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class GameBrowser {
 
@@ -12,14 +13,19 @@ public class GameBrowser {
 	}
 
 	public List<VideoGame> showFreeGames() {
-		throw new UnsupportedOperationException("Implement this method");
+		return gameCollection.selectGames(game -> game.getPrice() == 0);
 	}
 
 	public List<VideoGame> showGamesInGenre(String action) {
-		throw new UnsupportedOperationException("Implement this method");
+		return gameCollection.selectGames(game -> game.getGenres().contains(action));
 	}
 
 	public List<VideoGame> showGamesForSearch(String cd) {
-		throw new UnsupportedOperationException("Implement this method");
+		return gameCollection.selectGames(new Predicate<VideoGame>() {
+			@Override
+			public boolean test(VideoGame videoGame) {
+				return videoGame.getName().toLowerCase().contains(cd.toLowerCase());
+			}
+		});
 	}
 }
